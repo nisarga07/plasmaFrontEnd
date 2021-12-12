@@ -1,0 +1,34 @@
+<mat-sidenav-container class="sidenav-container" *ngIf="isUserLoggedIn(); ">
+<mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+  <mat-toolbar id="toolId" ></mat-toolbar>
+  </mat-sidenav>
+ 
+
+  <mat-sidenav-content  >
+    <mat-toolbar color="black" id="toolId">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span></span>
+      <div class="loginbtn" *ngIf="isUserLoggedIn(); else otherblock">
+    
+      <a  id ="right-panel-link" (click)='logoutUser()'>Logout</a>
+  
+    </div>
+    
+     <ng-template #otherblock>  <button class="btn btn-success pull-right"  id ="right-panel-link" (click)="redirectToLogin()" >SignUp</button></ng-template>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+ 
+</mat-sidenav-container>
+
+ 

@@ -1,0 +1,52 @@
+
+<mat-sidenav-container class="sidenav-container"  >
+<mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+  <mat-toolbar id="toolId">HSEPlasmaBank</mat-toolbar>
+   <mat-nav-list >
+      <a mat-list-item routerLink="/donorRequest">Plasma Request</a>
+      <a mat-list-item routerLink="/myRequest">Request History</a>
+      <a mat-list-item  routerLink="/donationRequest">Plasma Donation Request</a>
+      <a mat-list-item  routerLink="/donationRequestView">Donations History</a>
+
+     
+    </mat-nav-list>
+  </mat-sidenav>
+  </mat-sidenav-container>
+ <div id="backGroundImage">
+<div class="wrapper fadeInDown"  id="blockArea">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    
+
+    
+    <form>
+      <h1>Plasma Donation Request</h1>
+      <input type="text"  id="inputForm" class="fadeIn second" name="username" placeholder="username" [(ngModel)]="donationRequest.username">
+      <select  class="fadeIn first" name="bloodgroup"  [(ngModel)]="donationRequest.bloodGroup">
+        <option value="undefined" >Select Your blood group</option>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+      </select>
+      <input type="text"  id="inputForm" class="fadeIn third" name="units" placeholder="units" [(ngModel)]="donationRequest.units">
+      <input type="text"  id="inputForm" class="fadeIn second" name="disease" placeholder="disease" [(ngModel)]="donationRequest.disease">
+      <input type="text"  id="inputForm" class="fadeIn second" name="age" placeholder="age" [(ngModel)]="donationRequest.age">
+         
+     
+      <input type="submit" class="fadeIn fourth" id ="submit" value="Register" (click)="registerNow()">
+    </form>
+
+    
+
+  </div>
+</div>
+</div>

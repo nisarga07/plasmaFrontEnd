@@ -1,0 +1,41 @@
+
+<mat-sidenav-container class="sidenav-container"  >
+<mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+  <mat-toolbar id="toolId">DasariBloodBank</mat-toolbar>
+   <mat-nav-list >
+      <a mat-list-item routerLink="/donor">View Donors</a>
+      <a mat-list-item routerLink="/adminDonorRequest">Donors Requests</a>
+      <a mat-list-item  routerLink="/adminDonationsView">Donation Requests</a>
+      <a mat-list-item  routerLink="/acceptor">View Acceptors</a>
+      <a mat-list-item  routerLink="/adminAcceptorRequest">Acceptors Requests</a>
+      
+      <a mat-list-item  routerLink="/sendNotification">Send Notifcations</a>
+
+
+    </mat-nav-list>
+  </mat-sidenav>
+  </mat-sidenav-container>
+ <div id="backGroundImage">
+<div class="wrapper fadeInDown"  id="blockArea">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    
+
+    <!-- Login Form -->
+    <form>
+      <h1>SEND MESSAGE</h1>
+      <input type="text"  id="inputForm" class="fadeIn second" name="subject" placeholder="Enter Subject" [(ngModel)]="messengerRequest.subject">
+      <input type="text"  id="inputForm" class="fadeIn third" name="message" placeholder="Enter your message here" [(ngModel)]="messengerRequest.message">
+     
+      <input type="submit" class="fadeIn fourth" id ="submit" value="send" (click)="sendNow()">
+    </form>
+
+    
+
+  </div>
+</div>
+</div>

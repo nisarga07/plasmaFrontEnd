@@ -1,0 +1,22 @@
+
+<mat-sidenav-container class="sidenav-container"  >
+<mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+  <mat-toolbar id="toolId">HSEPlasmaBank</mat-toolbar>
+    <mat-nav-list >
+      <a mat-list-item routerLink="/donor">View Plasma Donors</a>
+      <a mat-list-item routerLink="/adminDonorRequest">Donors Requests</a>
+      <a mat-list-item  routerLink="/adminDonationsView">Donation Requests</a>
+      <a mat-list-item  routerLink="/acceptor">View Plasma Acceptors</a>
+      <a mat-list-item  routerLink="/adminAcceptorRequest">Acceptors Requests</a>
+      
+      
+     
+    </mat-nav-list>
+  </mat-sidenav>
+  </mat-sidenav-container>
+ 
+<p align="center">admin works!</p>
+

@@ -1,0 +1,51 @@
+
+<mat-sidenav-container class="sidenav-container"  >
+<mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+  <mat-toolbar id="toolId">HSEPlasmaBank</mat-toolbar>
+   <mat-nav-list >
+      <a mat-list-item routerLink="/acceptorRequest">Plasma Request</a>
+      <a mat-list-item routerLink="/myAcceptorRequest">Request History</a>
+      <a mat-list-item routerLink="/acceptorDonorView">View Plasma Donors</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  </mat-sidenav-container>
+ <div id="backGroundImage">
+<div class="wrapper fadeInDown"  id="blockArea">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    
+
+    <!-- Login Form -->
+    <form>
+      <h1>Make Request</h1>
+      <input type="text"  id="inputForm" class="fadeIn second" name="username" placeholder="username" [(ngModel)]="acceptorRequest.username">
+      <input type="text"  id="inputForm" class="fadeIn third" name="patientName" placeholder="patientName" [(ngModel)]="acceptorRequest.patientName">
+      <input type="text"  id="inputForm" class="fadeIn second" name="patientAge" placeholder="patientAge" [(ngModel)]="acceptorRequest.patientAge">
+      <input type="text"  id="inputForm" class="fadeIn second" name="reason" placeholder="reason" [(ngModel)]="acceptorRequest.reason">      
+      <select  class="fadeIn first" name="bloodgroup"  [(ngModel)]="acceptorRequest.bloodGroup">
+        <option value="undefined" >Select Your blood group</option>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+      </select>
+      
+      
+      <input type="number"  id="inputForm" class="fadeIn second" name="units" placeholder="units" [(ngModel)]="acceptorRequest.units">
+      <input type="file"  id="inputForm" class="fadeIn second" name="image" placeholder="IMAGE" (change)="onFileChanged($event)">
+      <input type="submit" class="fadeIn fourth" id ="submit" value="SEND" (click)="registerNow()">
+    </form>
+
+    
+
+  </div>
+</div>
+</div>

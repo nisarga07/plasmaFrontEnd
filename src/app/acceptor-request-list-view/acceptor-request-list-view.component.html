@@ -1,0 +1,83 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<mat-sidenav-container class="sidenav-container"  >
+<mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+  <mat-toolbar id="toolId">HSEPlasmaBank</mat-toolbar>
+   <mat-nav-list >
+    <a mat-list-item routerLink="/acceptorRequest">Plasma Request</a>
+      <a mat-list-item routerLink="/myAcceptorRequest">Request History</a>
+      <a mat-list-item routerLink="/acceptorDonorView">View Plasma Donors</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  </mat-sidenav-container>
+
+<div id="donor">
+<div class="container">
+    <div class="row">
+               <div id="custom-search-input">
+                                <div class="input-group col-md-12" style="text-align: center">
+                                    <input type="text" class="search-query form-control" placeholder="Search by Blood Group"  name="name" />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-danger" type="button" >
+                                            <span class=" glyphicon glyphicon-search"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+    </div>
+    </div>
+<div class="container">
+<div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>PatientName</th>
+            <th>PatientAge</th>
+            <th>Reason</th>
+            <th>Blood</th>
+            <th>Units</th>
+            <th>Status</th>
+            <th>Report</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let request of requests">
+            <td>{{request.id}}</td>
+            <td>{{request.username}}</td>
+            <td>{{request.patientName}}</td>
+            <td>{{request.patientAge}}</td>
+            <td>{{request.reason}}</td>
+            <td>{{request.bloodGroup}}</td>
+            <td>{{request.units}}</td>
+           <td> 
+          
+           <div style="border-radius: 10px;margin-top: 0px;">
+    <span *ngIf="request.status==2" class="btn btn-danger">REJECTED</span>
+    <span *ngIf="request.status==1" class="btn btn-success">ACCEPTED</span>
+    <span *ngIf="request.status==0" class="btn btn-warning">PENDING</span> 
+</div>
+</td>
+  <td><a (click)=download(request.fileName)>{{request.fileName}}</a></td>
+            
+          </tr>
+    </tbody>
+    </table>
+    </div>
+</div>
+
+</div>
+
+
+
+
+

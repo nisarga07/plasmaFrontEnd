@@ -1,0 +1,43 @@
+.sidenav-container {
+    height: 10%;
+  }
+  
+  .sidenav {
+    width: 200px;
+  }
+  
+  .sidenav .mat-toolbar {
+    background: inherit;
+  }
+  
+  .mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  .btn-success.pull-right{
+    background-color: green;
+    margin-right: 0.5%;
+  }
+  
+  #right-panel-link {
+    position: absolute;
+    right: 0;
+    margin-top: -1%;
+  }
+  .mat-toolbar{
+    background-color:black;
+    color: white;
+    margin-left: 0%;
+    width: 100%;
+  }
+  .mat-nav-list{
+    
+    color: white;
+    background-color: black;
+    height: 90%;
+   
+  }
+  .mat-list-item{
+    color: white;
+  }

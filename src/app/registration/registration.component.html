@@ -1,0 +1,50 @@
+
+<div id="backGroundImage">
+<div class="wrapper fadeInDown"  id="blockArea">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    
+
+    <!-- Login Form -->
+    <form>
+      <h1>Register</h1>
+      <input type="text"  id="inputForm" class="fadeIn second" name="login" placeholder="username" [(ngModel)]="user.username">
+      <input type="password"  id="inputForm" class="fadeIn third" name="login" placeholder="password" [(ngModel)]="user.password">
+      
+      <select  class="fadeIn first" name="bloodgroup"  [(ngModel)]="user.bloodGroup">
+        <option value="undefined" >Select Your blood group</option>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+      </select>
+      <select  class="fadeIn first"   name="userType"  [(ngModel)]="user.userType">
+        <option value="undefined" >Type of user</option>
+          <option value="Donor" >Donor</option>
+          <option value="ACEEPTOR" >ACEEPTOR</option>
+        
+      </select>
+      <input type="text"  id="inputForm" class="fadeIn second" name="phone" placeholder="Phone" [(ngModel)]="user.phone">
+   
+        <input type="email"  id="inputForm" class="fadeIn second" name="email" placeholder="Email" [(ngModel)]="user.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+         ngModel #emailref="ngModel" class="form-control" [class.success]="!emailref.invalid">
+         <div *ngIf="emailref.errors && (emailref.touched || emailref.dirty)" class ="text-error">
+              Invalid email
+           </div>
+
+      <input type="text"  id="inputForm" class="fadeIn second" name="city" placeholder="Citys" [(ngModel)]="user.city">
+      
+     
+      <input type="submit" class="fadeIn fourth" id ="submit" value="Register" (click)="registerNow()">
+    </form>
+
+    
+
+  </div>
+</div>
+</div>

@@ -1,0 +1,72 @@
+.sidenav-container {
+  height: 10%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.btn-success.pull-right{
+  background-color:red;
+  margin-right: 0.5%;
+  color: white;
+}
+
+#right-panel-link {
+  position: absolute;
+  right: 0;
+  margin-top: -1%;
+}
+
+#font{
+  color:white;
+  font-size: 35px;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  margin-left: 0%;
+  
+  
+}
+
+
+#hedaerNav{
+  margin-top: 25%;
+  min-height: 50%;
+}
+#anothersideBar{
+  margin-top: 25%;
+  min-height: 50%;
+}
+#toolId{
+  background-color: black;
+  
+  
+}
+
+.mat-toolbar{
+  background-color: black;
+  color: white;
+  margin-left: 0%;
+  width: 100%;
+}
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100% !important;
+}
+.mat-drawer-side {
+  border: none;
+}
+
