@@ -1,3 +1,5 @@
+
+// acceptorlogin
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { JwtAuthenticateService } from '../jwt-authenticate.service';
@@ -44,23 +46,7 @@ export class AcceptorLoginComponent implements OnInit {
     }
     );
    
-   /*  let resp=this.jwtAuthenticate.generateToken(this.request);
-    resp.subscribe(data=>
-      {
-        if(data){
-          console.log(data);
-          this.name=this.request.username
-          this.jwtAuthenticate.setToken(data);
-          this.router.navigate(['acceptorRequest']);
-          console.log("Form method"+this.jwtAuthenticate.getToken())
-
-        }
-      },data=>
-      {
-        alert(data.error.error);
-      }
-      ); */
-    
+  
     
   }
 
