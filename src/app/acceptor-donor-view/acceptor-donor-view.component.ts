@@ -1,3 +1,4 @@
+// acceptor donar view
 import { Component, OnInit } from '@angular/core';
 import { DonarAcceptorService } from '../donar-acceptor.service';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
